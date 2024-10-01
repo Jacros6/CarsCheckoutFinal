@@ -1,0 +1,15 @@
+<mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Select Manufacturer to Delete</mat-label>
+      <mat-select [(ngModel)]="selectedManufacturer" placeholder="Select a manufacturer">
+        <mat-option *ngFor="let manufacturer of manufacturers" [value]="manufacturer">
+            {{ manufacturer.name }}
+          </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [disabled]="!selectedManufacturer" (click)="onDeleteClick()">Delete</button>
+  </mat-dialog-actions>

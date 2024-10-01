@@ -1,0 +1,21 @@
+<mat-dialog-content>
+    <p>Model Name</p>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input required matInput [(ngModel)]="data.name" />
+    </mat-form-field>
+  
+  </mat-dialog-content>
+  <mat-dialog-content>
+      <p>Photo URL</p>
+      <mat-form-field>
+          <mat-label>Photo</mat-label>
+          <input matInput [(ngModel)]="data.photo" />
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial [disabled]="!data.name">Save</button>
+    
+  </mat-dialog-actions>
+  

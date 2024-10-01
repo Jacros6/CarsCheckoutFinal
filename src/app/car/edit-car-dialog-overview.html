@@ -1,0 +1,38 @@
+<mat-dialog-content>
+    <div *ngIf="car">
+        <p>Also Called</p>
+        <mat-form-field>
+          <mat-label>Also Called</mat-label>
+          <input matInput [(ngModel)]="car.alsoCalled" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Body Style</mat-label>
+            <input matInput [(ngModel)]="car.bodyStyle" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Assembly</mat-label>
+            <input matInput [(ngModel)]="car.assembly" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Car Class</mat-label>
+            <input matInput [(ngModel)]="car.carClass" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Predecessors</mat-label>
+            <input  matInput [(ngModel)]="car.predecessors" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Production</mat-label>
+            <input  matInput [(ngModel)]="car.production" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <input  matInput [(ngModel)]="car.description" />
+        </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial [disabled]="!carName">Save</button>
+    
+  </mat-dialog-actions>

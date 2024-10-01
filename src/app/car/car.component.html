@@ -1,0 +1,23 @@
+<main>
+    <section class="car-section">
+                <mat-card class="car-card" appearance="outlined">
+                    <mat-card-title class="car-title" >{{ route.snapshot.params['name'] }}</mat-card-title>
+                    <img mat-card-image [src] = 'carDetail?.photo' onerror="this.src = 'https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg'">
+                    <div class="scrollable-div">
+                        <mat-card-content class="car-text" ><a class="bold-text">Manufacturer:</a> {{ carDetail?.manufacturer }}</mat-card-content>
+                        <mat-card-content class="car-text" ><a class="bold-text">Also Called:</a> {{ carDetail?.alsoCalled }}</mat-card-content>
+                        <mat-card-content class="car-text" ><a class="bold-text">Body Style:</a> {{ carDetail?.bodyStyle }}</mat-card-content>
+                        <mat-card-content class="car-text" ><a class="bold-text">Assembly:</a> {{ carDetail?.assembly }}</mat-card-content>
+                        <mat-card-content class="car-text" ><a class="bold-text">Car Class:</a> {{ carDetail?.carClass }}</mat-card-content>
+                        <mat-card-content class="car-text" ><a class="bold-text">Layout:</a> {{ carDetail?.layout }}</mat-card-content>
+                        <mat-card-content class="car-text" ><a class="bold-text">Predecessors:</a> {{ carDetail?.predecessors }}</mat-card-content>
+                        <mat-card-content class="car-text" ><a class="bold-text">Production:</a> {{ carDetail?.production }}</mat-card-content>
+                        <mat-card-content class="car-text" ><a class="bold-text">Description:</a> {{ carDetail?.description }}</mat-card-content>
+                    </div>
+                </mat-card>
+                
+    </section>
+    <div class="car-button-div">
+        <button (click) = "editDialog()">Edit</button>
+    </div>
+</main>

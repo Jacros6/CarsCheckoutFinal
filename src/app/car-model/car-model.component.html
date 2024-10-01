@@ -1,0 +1,16 @@
+<main>
+    <div class="model-button-div">
+        <button (click) = "openAddDialog()" > Add</button>
+        <button (click) = "openDeleteDialog()">Delete</button>
+    </div>
+    <section class="model-section">
+        <div *ngFor="let model of modelList" class="model-div">
+            <a [routerLink]="['/make', model.name]" style="text-decoration: none;"> 
+                <mat-card class="model-card" appearance="outlined">
+                    <img mat-card-image [src] = 'model.photo' onerror="this.src = 'https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg'">
+                    <mat-card-title class="model-text" >{{ model.name }}</mat-card-title>
+                </mat-card>
+            </a>
+        </div>
+    </section>
+</main>

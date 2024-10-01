@@ -1,0 +1,18 @@
+<main>
+    <div class="manufacturer-button-div">
+        <button (click) = "openAddDialog()" > Add</button>
+        <button (click) = "openDeleteDialog()">Delete</button>
+    </div>
+    <section class="manufacturer-section">
+        
+        <div *ngFor="let manufacturer of manufacturerList" class="manufacturer-div">
+            <a [routerLink]="['/models', manufacturer.name]" style="text-decoration: none;"> 
+                <mat-card class="manufacturer-card" appearance="outlined">
+                    <img mat-card-image [src] = 'manufacturer.photo' onerror="this.src = 'https://images.pexels.com/photos/2036544/pexels-photo-2036544.jpeg'">
+                    <mat-card-title class="manufacturer-text" >{{ manufacturer.name }}</mat-card-title>
+                </mat-card>
+            </a>
+        </div>
+
+    </section>
+</main>
